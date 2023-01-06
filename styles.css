@@ -1,0 +1,72 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #143F6B;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.piano {
+    display: flex;
+}
+
+.key {
+    height: calc(var(--width) * 4);
+    width: var(--width);
+}
+
+.black{
+    --width:  60px;
+    background-color: black;
+    margin-left: calc(var(--width) * -.5);
+    margin-right: calc(var(--width) * -.5);
+    border-radius: calc(var(--width) * .05);
+    z-index: 2;
+}
+
+.white{
+    --width:  100px;
+    background-color: white;
+    border: calc(var(--width) * .03) solid #333;
+    border-radius: calc(var(--width) * .05);
+}
+
+.white.active {
+    background-color: #CCC;
+}
+
+.black.active {
+    background-color: #333;
+}
+
+
+@media (420px < width < 768px) {
+    .white {
+        --width: 70px;
+        border: calc(var(--width) * .04) solid #333;
+     
+    }
+
+    .black {
+        --width: 42px;
+        border: calc(var(--width) * .04) solid #333;
+    }
+}
+
+@media (max-width: 420px) {
+    .white {
+        --width: 48px;
+        border: calc(var(--width) * .04) solid #333;
+     
+    }
+
+    .black {
+        --width: 30px;
+        border: calc(var(--width) * .04) solid #333;
+    }
+}
